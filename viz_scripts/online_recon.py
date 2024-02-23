@@ -216,6 +216,9 @@ def visualize(scene_path, cfg):
     view_k = k * cfg['view_scale']
     view_k[2, 2] = 1
     view_control = vis.get_view_control()
+    if view_control is None:
+        print("Error: Unable to get view control.")
+        exit()
     cparams = o3d.camera.PinholeCameraParameters()
     first_view_w2c = first_frame_w2c
     first_view_w2c[:3, 3] = first_view_w2c[:3, 3] + np.array([0, 0, 0.5])

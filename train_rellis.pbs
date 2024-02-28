@@ -1,0 +1,9 @@
+#PBS -N GeoTransformer-RELLIS
+#PBS -l select=1:ncpus=64:mem=250gb:ngpus=1:gpu_model=a100,walltime=10:00:00
+#PBS -q viprgs
+
+cd /zfs/ailab/VIPR/SplaTAM/
+
+APPTAINER_PATH="/zfs/ailab/Tools/bin:$PATH"
+
+apptainer run --nv --env "PATH=$APPTAINER_PATH" -B /zfs/ailab:/zfs/ailab -B /zfs/ailab/Tools/micromamba:$HOME/micromamba -B $TMPDIR:$TMPDIR -B /scratch/$USER:/scratch/$USER -B /fastscratch/$USER:/fastscratch/$USER /zfs/ailab/Tools/ubuntu.sif bash /zfs/ailab/VIPR/SplaTAM/train_rellis.sh

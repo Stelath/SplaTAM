@@ -3,7 +3,7 @@ from os.path import join as p_join
 
 primary_device = "cuda:0"
 
-scenes = ["freiburg1_desk", "freiburg1_desk2", "freiburg1_room", "freiburg2_xyz", "freiburg3_long_office_household"]
+scenes = ["freiburg1_desk"]#, "freiburg1_desk2", "freiburg1_room", "freiburg2_xyz", "freiburg3_long_office_household"]
 
 seed = int(0)
 scene_name = scenes[int(0)]

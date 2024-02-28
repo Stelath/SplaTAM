@@ -3,7 +3,7 @@ from os.path import join as p_join
 
 primary_device = "cuda:0"
 
-scenes = ["00000"]
+scenes = ["04"]
 
 seed = int(0)
 scene_name = scenes[int(0)]
@@ -15,7 +15,7 @@ tracking_iters = 200
 mapping_iters = 30
 scene_radius_depth_ratio = 2
 
-group_name = "TUM"
+group_name = "RELLIS"
 run_name = f"{scene_name}_seed{seed}"
 
 config = dict(
@@ -38,7 +38,7 @@ config = dict(
     checkpoint_interval=100, # Checkpoint Interval
     use_wandb=True,
     wandb=dict(
-        entity="theairlab",
+        entity="stelath",
         project="SplaTAM",
         group=group_name,
         name=run_name,
@@ -46,8 +46,8 @@ config = dict(
         eval_save_qual=True,
     ),
     data=dict(
-        basedir="./data/TUM_RGBD",
-        gradslam_data_cfg=f"./configs/data/RELLIS/{scene_name}.yaml",
+        basedir="./data/RELLIS",
+        gradslam_data_cfg=f"./configs/data/rellis.yaml",
         sequence=f"{scene_name}",
         desired_image_height=480,
         desired_image_width=640,

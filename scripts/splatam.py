@@ -36,7 +36,8 @@ from datasets.gradslam_datasets import (
     NeRFCaptureDataset
 )
 from datasets.vipr_datasets import (
-    DIODEDataset
+    DIODEDataset,
+    RELLISDataset
 )
 from utils.common_utils import seed_everything, save_params_ckpt, save_params
 from utils.eval_helpers import report_loss, report_progress, eval
@@ -76,6 +77,8 @@ def get_dataset(config_dict, basedir, sequence, **kwargs):
         return NeRFCaptureDataset(basedir, sequence, **kwargs)
     elif config_dict["dataset_name"].lower() in ["diode"]:
         return DIODEDataset(config_dict, basedir, sequence, **kwargs)
+    elif config_dict["dataset_name"].lower() in ["rellis"]:
+        return RELLISDataset(config_dict, basedir, sequence, **kwargs)
     else:
         raise ValueError(f"Unknown dataset name {config_dict['dataset_name']}")
 

@@ -47,7 +47,7 @@ config = dict(
     ),
     data=dict(
         basedir="./data/RELLIS",
-        gradslam_data_cfg=f"./configs/data/lab.yaml",
+        gradslam_data_cfg=f"./configs/data/rellis.yaml",
         sequence=f"{scene_name}",
         desired_image_height=480,
         desired_image_width=640,

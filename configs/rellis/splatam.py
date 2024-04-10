@@ -3,7 +3,7 @@ from os.path import join as p_join
 
 primary_device = "cuda:0"
 
-scenes = ["04"]
+scenes = ["lab_short"]
 
 seed = int(0)
 scene_name = scenes[int(0)]
@@ -47,7 +47,7 @@ config = dict(
     ),
     data=dict(
         basedir="./data/RELLIS",
-        gradslam_data_cfg=f"./configs/data/rellis.yaml",
+        gradslam_data_cfg=f"./configs/data/lab.yaml",
         sequence=f"{scene_name}",
         desired_image_height=480,
         desired_image_width=640,

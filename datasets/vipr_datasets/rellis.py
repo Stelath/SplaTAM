@@ -68,10 +68,8 @@ class RELLISDataset(GradSLAMDataset):
         return associations
     
     def get_filepaths(self):
-        """ read video data in diode-rgbd format """
-
         color_paths = sorted(glob.glob(os.path.join(self.input_folder, 'images', '*.jpg')))
-        depth_paths = sorted(glob.glob(os.path.join(self.input_folder, 'depths', '*.npy')))
+        depth_paths = sorted(glob.glob(os.path.join(self.input_folder, 'depth', '*.npy')))
         
         embedding_paths = None
 
